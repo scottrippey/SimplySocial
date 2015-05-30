@@ -588,6 +588,11 @@ textarea {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
+.banner {
+  background: url(../images/banner.jpg) center top no-repeat;
+  height: 425px;
+  background-size: cover;
+}
 .title-bar {
   background-color: #252627;
   font-size: 18px;

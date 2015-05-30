@@ -3,16 +3,19 @@ angular.module('home-page.js',[])
 	function(){
 		return {
 			restrict: 'E',
-			template: `				
-				<div> (MAIN BANNER) </div>
+			template: `
+				<banner>
+					<div> 
+						What's on your mind?
+					</div>
+					
+					<nav>
+						<a> All Posts </a>
+						<a> Photos </a>
+						<a> Videos </a>
+					</nav>
+				</banner>
 				
-				<p> What's on your mind? </p>
-				
-				<nav>
-					<a> All Posts </a>
-					<a> Photos </a>
-					<a> Videos </a>
-				</nav>
 				
 				<section>
 					<fieldset> POST 1 </fieldset>
