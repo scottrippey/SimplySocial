@@ -1,0 +1,17 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 width="32px" height="29px" 
+	 viewBox="0 0 31 26" 
+	 xml:space="preserve"
+>
+<g>
+		<path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M15.381,15.977h-0.647l-5.176,4.762v-4.762H8.911c-4.626,0-8.411-3.482-8.411-7.738S4.285,0.5,8.911,0.5h10.352
+		c4.626,0,8.411,3.482,8.411,7.738c0,1.053-0.231,2.059-0.65,2.976"/>
+	
+		<ellipse stroke-miterlimit="10" cx="23.792" cy="19.548" rx="6.47" ry="5.952"/>
+	
+		<line stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="23.792" y1="16.571" x2="23.792" y2="22.523"/>
+	
+		<line stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="27.027" y1="19.548" x2="20.557" y2="19.548"/>
+</g>
+</svg>

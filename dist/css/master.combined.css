@@ -532,17 +532,6 @@ html {
   text-shadow: none;
 }
 /*
- * A better looking default horizontal rule
- */
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #cccccc;
-  margin: 1em 0;
-  padding: 0;
-}
-/*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
@@ -556,18 +545,16 @@ video {
   vertical-align: middle;
 }
 /*
- * Remove default fieldset styles.
- */
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-/*
  * Allow only vertical resizing of textareas.
  */
 textarea {
   resize: vertical;
+}
+/*
+ * Because awesome
+ */
+* {
+  box-sizing: border-box;
 }
 /**
  * Name all colors by Hue and Luminance
@@ -603,10 +590,12 @@ textarea {
  */
 .title-bar {
   background-color: #252627;
-  line-height: 4rem;
+  font-size: 18px;
+  padding: 0 20px;
+  line-height: 60px;
 }
 .title-bar .title-bar-contents {
-  width: 90%;
+  max-width: 900px;
   margin: 0 auto;
 }
 .title-bar .simply-social-logo > .simply {
@@ -615,11 +604,32 @@ textarea {
 .title-bar .simply-social-logo > .social {
   color: #bdc2cb;
 }
+.title-bar .simply-social-logo > .svg-logo > svg {
+  stroke: #00cc99;
+  fill: none;
+}
+.title-bar .svg-caption-add > svg {
+  stroke: #00cc99;
+  fill: none;
+}
 .title-bar .search-box {
-  background-color: transparent;
   border: 1px solid #71767f;
-  border-radius: 2px;
-  height: 1.8rem;
-  padding: 0 .5em;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 30px;
+  position: relative;
+}
+.title-bar .search-box > input {
+  background-color: transparent;
+  border: none;
+  height: 30px;
+  padding: 0 28px 0 5px;
+}
+.title-bar .search-box .svg-search-glass > svg {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  margin: 0 5px 0 0;
+  color: #71767f;
 }
 /*# sourceMappingURL=dist/css/master.combined.css.map */

@@ -1,10 +1,13 @@
 
 .title-bar {
 	background-color: @COLOR-GRAY-15;
-	line-height: 4rem;
+	font-size: 18px;
+	
+	padding: 0 20px;
+	line-height: 60px;
 	
 	.title-bar-contents {
-		width: 90%;
+		max-width: 900px;
 		margin: 0 auto;
 	}
 	
@@ -15,13 +18,41 @@
 		> .social {
 			color: @COLOR-GRAY-77;
 		}
+		> .svg-logo > svg {
+			stroke: @COLOR-GREEN-40;
+			fill: none;
+		}
+	}
+	
+	.svg-caption-add > svg {
+		stroke: @COLOR-GREEN-40;
+		fill: none;
 	}
 	
 	.search-box {
-		background-color: transparent;
 		border: 1px solid @COLOR-GRAY-47;
-		border-radius: 2px;
-		height: 1.8rem;
-		padding: 0 .5em;
+		border-radius: 4px;
+		
+		display: inline-block;
+		line-height: 30px;
+		position: relative;
+		
+		> input {
+			.RESET-TEXTBOX();
+			height: 30px;
+			padding: 0 28px 0 5px;
+		}
+		
+		.svg-search-glass > svg {
+			position: absolute;
+			right: 0; top: 8px;
+			margin: 0 5px 0 0;
+			color: @COLOR-GRAY-47;
+		}
+	}
+	
+	.RESET-TEXTBOX() {
+		background-color: transparent;
+		border: none;
 	}
 }

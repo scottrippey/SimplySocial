@@ -1,0 +1,13 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+     width="30px" height="26px"
+     viewbox="0 0 28 25">
+<g>
+	<path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+	M16.5,0.5H5.071C2.547,0.5,0.5,2.547,0.5,5.071v4.572c0,2.525,2.047,4.571,4.571,4.571h1.715v4.572l4.571-4.572H16.5
+	c2.525,0,4.571-2.046,4.571-4.571V5.071C21.071,2.547,19.025,0.5,16.5,0.5z"/>
+
+	<path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+	M13.071,18.214c0,1.578,1.279,2.857,2.857,2.857h2.856l3.43,3.429v-3.429h1.714c1.578,0,2.856-1.279,2.856-2.857v-2.285
+	c0-1.578-1.278-2.857-2.856-2.857"/>
+</g>
+</svg>

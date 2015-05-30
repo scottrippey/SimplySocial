@@ -8,13 +8,13 @@ angular.module('app', ['ngAnimate', 'ngTouch', 'app-components.js', 'app-pages.j
 angular.module('title-bar.js', []).directive('titleBar', [function () {
 	return {
 		restrict: 'E',
-		template: '\n\t\t\t\t<nav class="title-bar">\n\t\t\t\t\t<div class="title-bar-contents">\n\t\t\t\t\t\t<span class="simply-social-logo">\n\t\t\t\t\t\t\t<span class="simply">simply</span><span class="social">social<span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<input class="search-box" type="text">\n\t\t\t\t\t\t<current-user-avatar></current-user-avatar>\n\t\t\t\t\t</div>\n\t\t\t\t</nav>\n\t\t\t'
+		template: '\n\t\t\t\t<nav class="title-bar">\n\t\t\t\t\t<div class="title-bar-contents">\n\t\t\t\t\t\t<span class="simply-social-logo">\n\t\t\t\t\t\t\t<span class="svg-logo" ng-include="\'dist/images/simply-social-logo.svg\'"></span>\n\t\t\t\t\t\t\t<span class="simply">simply</span><span class="social">social<span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<span class="svg-caption-add" ng-include="\'dist/images/caption-add.svg\'"></span>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<label class="search-box">\n\t\t\t\t\t\t\t<input type="text">\n\t\t\t\t\t\t\t<span class="svg-search-glass" ng-include="\'dist/images/search-glass.svg\'"></span>\n\t\t\t\t\t\t</label>\n\t\t\t\t\t\t<current-user-avatar></current-user-avatar>\n\t\t\t\t\t</div>\n\t\t\t\t</nav>\n\t\t\t'
 	};
 }]);
 angular.module('home-page.js', []).directive('homePage', [function () {
 	return {
 		restrict: 'E',
-		template: '\n\t\t\t\t<title-bar></title-bar>\n\t\t\t\t\n\t\t\t\t<main-banner> (MAIN BANNER) </main-banner>\n\t\t\t\t\n\t\t\t\t<p> What\'s on your mind? </p>\n\t\t\t\t\n\t\t\t\t<nav>\n\t\t\t\t\t<a> All Posts </a>\n\t\t\t\t\t<a> Photos </a>\n\t\t\t\t\t<a> Videos </a>\n\t\t\t\t</nav>\n\t\t\t\t\n\t\t\t\t<section>\n\t\t\t\t\t<fieldset> POST 1 </fieldset>\n\t\t\t\t\t<fieldset> POST 2 </fieldset>\n\t\t\t\t\t<fieldset> POST 3 </fieldset>\n\t\t\t\t\t<fieldset> POST 4 </fieldset>\n\t\t\t\t</section>\n\t\t\t'
+		template: '\t\t\t\t\n\t\t\t\t<div> (MAIN BANNER) </div>\n\t\t\t\t\n\t\t\t\t<p> What\'s on your mind? </p>\n\t\t\t\t\n\t\t\t\t<nav>\n\t\t\t\t\t<a> All Posts </a>\n\t\t\t\t\t<a> Photos </a>\n\t\t\t\t\t<a> Videos </a>\n\t\t\t\t</nav>\n\t\t\t\t\n\t\t\t\t<section>\n\t\t\t\t\t<fieldset> POST 1 </fieldset>\n\t\t\t\t\t<fieldset> POST 2 </fieldset>\n\t\t\t\t\t<fieldset> POST 3 </fieldset>\n\t\t\t\t\t<fieldset> POST 4 </fieldset>\n\t\t\t\t</section>\n\t\t\t'
 	};
 }]);
 //# sourceMappingURL=app.combined.es6.js.map

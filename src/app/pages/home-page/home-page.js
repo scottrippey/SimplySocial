@@ -3,10 +3,8 @@ angular.module('home-page.js',[])
 	function(){
 		return {
 			restrict: 'E',
-			template: `
-				<title-bar></title-bar>
-				
-				<main-banner> (MAIN BANNER) </main-banner>
+			template: `				
+				<div> (MAIN BANNER) </div>
 				
 				<p> What's on your mind? </p>
 				
