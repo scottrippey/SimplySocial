@@ -601,9 +601,25 @@ textarea {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.hello-world {
-  border: 1px solid #cccccc;
-  border-radius: 3px;
-  padding: 0.2rem;
+.title-bar {
+  background-color: #252627;
+  line-height: 4rem;
+}
+.title-bar .title-bar-contents {
+  width: 90%;
+  margin: 0 auto;
+}
+.title-bar .simply-social-logo > .simply {
+  color: #71767f;
+}
+.title-bar .simply-social-logo > .social {
+  color: #bdc2cb;
+}
+.title-bar .search-box {
+  background-color: transparent;
+  border: 1px solid #71767f;
+  border-radius: 2px;
+  height: 1.8rem;
+  padding: 0 .5em;
 }
 /*# sourceMappingURL=dist/css/master.combined.css.map */
