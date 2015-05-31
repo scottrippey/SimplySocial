@@ -129,11 +129,23 @@ angular.module('user-feed.js',[])
 			},
 			template: `
 				<section class="user-feed">
-					<article class="post"> 
-						POST 1 
+					<article class="post" ng-repeat="post in vm.posts"> 
+						{{ post.message }}
 					</article>
 				</section>
-			`
+			`,
+			controller: function() {
+				var vm = this;
+				
+				angular.extend(vm, {
+					posts: [
+						{ message: 'Post 1' },
+						{ message: 'Post 2' },
+						{ message: 'Post 3' },
+						{ message: 'Post 4' }
+					]
+				});
+			}	
 		};
 	}
 ]);

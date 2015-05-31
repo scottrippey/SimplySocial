@@ -48,7 +48,14 @@ angular.module("user-feed.js", []).directive("userFeed", [function () {
 		scope: {
 			filterType: "="
 		},
-		template: "\n\t\t\t\t<section class=\"user-feed\">\n\t\t\t\t\t<article class=\"post\"> \n\t\t\t\t\t\tPOST 1 \n\t\t\t\t\t</article>\n\t\t\t\t</section>\n\t\t\t"
+		template: "\n\t\t\t\t<section class=\"user-feed\">\n\t\t\t\t\t<article class=\"post\" ng-repeat=\"post in vm.posts\"> \n\t\t\t\t\t\t{{ post.message }}\n\t\t\t\t\t</article>\n\t\t\t\t</section>\n\t\t\t",
+		controller: function controller() {
+			var vm = this;
+
+			angular.extend(vm, {
+				posts: [{ message: "Post 1" }, { message: "Post 2" }, { message: "Post 3" }, { message: "Post 4" }]
+			});
+		}
 	};
 }]);
 angular.module("write-post.js", []).directive("writePost", [function () {

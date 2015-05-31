@@ -708,6 +708,16 @@ label,
   margin: 0 5px 0 0;
   color: #71767f;
 }
+.user-feed {
+  max-width: 575px;
+  margin: 55px auto;
+}
+.user-feed .post {
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  margin-bottom: 40px;
+  padding: 20px;
+}
 .write-post {
   background-color: rgba(0, 179, 134, 0.7);
   color: rgba(255, 255, 255, 0.5);
