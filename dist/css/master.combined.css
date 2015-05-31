@@ -601,13 +601,6 @@ label,
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.banner {
-  background: url(../images/banner.jpg) center top no-repeat;
-  height: 425px;
-  background-size: cover;
-  padding: 1px 0;
-  position: relative;
-}
 .list-filter {
   color: #ffffff;
   font-size: 12px;
@@ -645,6 +638,13 @@ label,
 }
 .list-filter .filter-item.layout.selected {
   opacity: 1;
+}
+.main-banner {
+  background: url(../images/banner.jpg) center top no-repeat;
+  height: 425px;
+  background-size: cover;
+  padding: 1px 0;
+  position: relative;
 }
 .title-bar {
   background-color: #252627;
