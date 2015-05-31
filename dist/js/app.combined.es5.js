@@ -15,7 +15,23 @@ angular.module("banner.js", []).directive("banner", [function () {
 angular.module("list-filter.js", []).directive("listFilter", [function () {
 	return {
 		restrict: "E",
-		template: "\n\t\t\t\t<nav class=\"list-filter\">\n\t\t\t\t\t<div class=\"list-filter-contents\">\n\t\t\t\t\t\t<div class=\"filter-group-one\">\n\t\t\t\t\t\t\t<a class=\"filter-item layout selected\">\n\t\t\t\t\t\t\t\t<img src=\"dist/images/list.png\">\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<a class=\"filter-item layout\">\n\t\t\t\t\t\t\t\t<img src=\"dist/images/grid.png\">\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"filter-group-two\">\n\t\t\t\t\t\t\t<a class=\"filter-item type selected\"> All Posts </a>\n\t\t\t\t\t\t\t<a class=\"filter-item type\"> Photos </a>\n\t\t\t\t\t\t\t<a class=\"filter-item type\"> Videos </a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</nav>\n\t\t\t"
+		bindToController: true,
+		controllerAs: "vm",
+		scope: {
+			filterType: "=?",
+			filterLayout: "=?"
+		},
+		template: "\n\t\t\t\t<nav class=\"list-filter\">\n\t\t\t\t\t<div class=\"list-filter-contents\">\n\t\t\t\t\t\t<div class=\"filter-group-one\">\n\t\t\t\t\t\t\t<a class=\"filter-item layout\"\n\t\t\t\t\t\t\t\tng-repeat=\"item in vm.layouts\"\n\t\t\t\t\t\t\t\tng-class=\"{ 'selected': vm.filterLayout == item.value }\"\n\t\t\t\t\t\t\t\tng-click=\"vm.filterLayout = item.value\"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<img ng-src=\"{{ item.imgSrc }}\">\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"filter-group-two\">\n\t\t\t\t\t\t\t<a class=\"filter-item type\"\n\t\t\t\t\t\t\t\tng-repeat=\"item in vm.types\"\n\t\t\t\t\t\t\t\tng-class=\"{ 'selected': vm.filterType == item.value }\"\n\t\t\t\t\t\t\t\tng-click=\"vm.filterType = item.value\"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t{{ item.label }}\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</nav>\n\t\t\t",
+		controller: function controller() {
+			var vm = this;
+
+			angular.extend(vm, {
+				filterType: "all",
+				filterLayout: "list",
+				types: [{ label: "All Posts", value: "all" }, { label: "Photos", value: "photos" }, { label: "Videos", value: "videos" }],
+				layouts: [{ imgSrc: "dist/images/list.png", value: "list" }, { imgSrc: "dist/images/grid.png", value: "grid" }]
+			});
+		}
 	};
 }]);
 angular.module("title-bar.js", []).directive("titleBar", [function () {

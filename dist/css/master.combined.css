@@ -557,6 +557,19 @@ textarea {
   box-sizing: border-box;
 }
 /**
+ * Default cursor styles:
+ * Anything clickable has the pointer,
+ * text inputs have the caret,
+ * and everything else has the arrow default (including html text).
+ */
+body {
+  cursor: default;
+}
+label,
+[ng-click] {
+  cursor: pointer;
+}
+/**
  * Name all colors by Hue and Luminance
  */
 /* ==========================================================================
@@ -628,7 +641,7 @@ textarea {
 }
 .list-filter .filter-item.layout {
   opacity: 0.5;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 .list-filter .filter-item.layout.selected {
   opacity: 1;
