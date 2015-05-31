@@ -7,11 +7,7 @@ angular.module('home-page.js',[])
 				<banner>
 					<write-post></write-post>
 					
-					<nav>
-						<a> All Posts </a>
-						<a> Photos </a>
-						<a> Videos </a>
-					</nav>
+					<list-filter></list-filter>
 				</banner>
 				
 				

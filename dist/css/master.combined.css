@@ -593,6 +593,45 @@ textarea {
   height: 425px;
   background-size: cover;
   padding: 1px 0;
+  position: relative;
+}
+.list-filter {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 45px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.list-filter .list-filter-contents {
+  margin: 0 auto;
+  max-width: 575px;
+}
+.list-filter .filter-group-one {
+  float: right;
+}
+.list-filter .filter-item {
+  display: inline-block;
+}
+.list-filter .filter-item.type {
+  text-transform: uppercase;
+  color: #bdc2cb;
+  padding: 0 8px;
+  margin-right: 40px;
+}
+.list-filter .filter-item.type.selected {
+  border-bottom: 4px solid #00cc99;
+  color: #ffffff;
+  opacity: 1;
+}
+.list-filter .filter-item.layout {
+  opacity: 0.5;
+  margin-left: 10px;
+}
+.list-filter .filter-item.layout.selected {
+  opacity: 1;
 }
 .title-bar {
   background-color: #252627;
