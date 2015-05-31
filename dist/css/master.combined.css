@@ -603,6 +603,24 @@ textarea {
   max-width: 900px;
   margin: 0 auto;
 }
+.title-bar .title-bar-contents:before,
+.title-bar .title-bar-contents:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.title-bar .title-bar-contents:after {
+  clear: both;
+}
+.title-bar .title-group-one {
+  float: left;
+  line-height: 60px;
+}
+.title-bar .title-group-two {
+  float: right;
+  line-height: 60px;
+}
 .title-bar .simply-social-logo > .simply {
   color: #71767f;
 }

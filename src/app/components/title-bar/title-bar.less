@@ -1,14 +1,25 @@
 
 .title-bar {
+	@titleBarHeight: 60px;
+	
 	background-color: @COLOR-GRAY-15;
 	font-size: 18px;
 	
 	padding: 0 20px;
-	line-height: 60px;
+	line-height: @titleBarHeight;
 	
 	.title-bar-contents {
 		max-width: 900px;
 		margin: 0 auto;
+		.clearfix();
+	}
+	.title-group-one {
+		float: left;
+		line-height: @titleBarHeight;
+	}
+	.title-group-two {
+		float: right;
+		line-height: @titleBarHeight;
 	}
 	
 	.simply-social-logo {
@@ -23,6 +34,7 @@
 			fill: none;
 		}
 	}
+	
 	
 	.svg-caption-add > svg {
 		stroke: @COLOR-GREEN-40;
