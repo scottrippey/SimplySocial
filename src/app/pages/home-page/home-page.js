@@ -5,9 +5,7 @@ angular.module('home-page.js',[])
 			restrict: 'E',
 			template: `
 				<banner>
-					<div> 
-						What's on your mind?
-					</div>
+					<write-post></write-post>
 					
 					<nav>
 						<a> All Posts </a>

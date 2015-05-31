@@ -1,0 +1,31 @@
+.write-post {
+	background-color: fade(@COLOR-GREEN-40, 70%);
+	color: fade(@COLOR-WHITE, 70%);
+	border-radius: 4px;
+	
+	margin: 120px auto 0;
+	max-width: @WIDTH-MAIN-CONTENT;
+	
+	padding: 45px 30px 20px;
+	
+	.write-text {
+		.textbox-reset();
+		.textbox-placeholder-color(fade(@COLOR-WHITE, 70%));
+		
+		font-size: 30px;
+		width: 100%;
+		
+		margin-bottom: 35px;
+	}
+	.add-button {
+		margin-right: 20px;
+		display: inline-block;
+		
+		.svg-add-photo > svg,
+		.svg-add-video > svg {
+			vertical-align: baseline;
+			margin-right: 5px;
+		}
+	}
+	
+}

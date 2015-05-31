@@ -9,7 +9,7 @@
 	line-height: @titleBarHeight;
 	
 	.title-bar-contents {
-		max-width: 900px;
+		max-width: @WIDTH-MAX;
 		margin: 0 auto;
 		.clearfix();
 	}
@@ -42,15 +42,15 @@
 	}
 	
 	.search-box {
-		border: 1px solid @COLOR-GRAY-47;
+		border: 1px solid @COLOR-GRAY-30;
 		border-radius: 4px;
 		
 		display: inline-block;
 		line-height: 30px;
 		position: relative;
 		
-		> input {
-			.RESET-TEXTBOX();
+		.search-text {
+			.textbox-reset();
 			height: 30px;
 			padding: 0 28px 0 5px;
 		}
@@ -63,8 +63,4 @@
 		}
 	}
 	
-	.RESET-TEXTBOX() {
-		background-color: transparent;
-		border: none;
-	}
 }

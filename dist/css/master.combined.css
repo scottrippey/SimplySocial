@@ -592,6 +592,7 @@ textarea {
   background: url(../images/banner.jpg) center top no-repeat;
   height: 425px;
   background-size: cover;
+  padding: 1px 0;
 }
 .title-bar {
   background-color: #252627;
@@ -600,7 +601,7 @@ textarea {
   line-height: 60px;
 }
 .title-bar .title-bar-contents {
-  max-width: 900px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 .title-bar .title-bar-contents:before,
@@ -636,13 +637,13 @@ textarea {
   fill: none;
 }
 .title-bar .search-box {
-  border: 1px solid #71767f;
+  border: 1px solid #494c50;
   border-radius: 4px;
   display: inline-block;
   line-height: 30px;
   position: relative;
 }
-.title-bar .search-box > input {
+.title-bar .search-box .search-text {
   background-color: transparent;
   border: none;
   height: 30px;
@@ -654,5 +655,43 @@ textarea {
   top: 8px;
   margin: 0 5px 0 0;
   color: #71767f;
+}
+.write-post {
+  background-color: rgba(0, 204, 153, 0.7);
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  margin: 120px auto 0;
+  max-width: 575px;
+  padding: 45px 30px 20px;
+}
+.write-post .write-text {
+  background-color: transparent;
+  border: none;
+  /* Firefox 18- */
+  /* Firefox 19+ */
+  font-size: 30px;
+  width: 100%;
+  margin-bottom: 35px;
+}
+.write-post .write-text::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.write-post .write-text:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.write-post .write-text::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.write-post .write-text:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.write-post .add-button {
+  margin-right: 20px;
+  display: inline-block;
+}
+.write-post .add-button .svg-add-photo > svg,
+.write-post .add-button .svg-add-video > svg {
+  vertical-align: baseline;
+  margin-right: 5px;
 }
 /*# sourceMappingURL=dist/css/master.combined.css.map */

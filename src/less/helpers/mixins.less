@@ -73,3 +73,14 @@
         clear: both;
     }
 }
+
+.textbox-reset() {
+	background-color: transparent;
+	border: none;
+}
+.textbox-placeholder-color(@color) {
+    &::-webkit-input-placeholder { color: @color; }
+    &:-moz-placeholder { color: @color; } /* Firefox 18- */
+    &::-moz-placeholder { color: @color; } /* Firefox 19+ */
+    &:-ms-input-placeholder { color: @color; }
+}

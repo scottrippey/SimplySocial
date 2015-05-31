@@ -16,7 +16,7 @@ angular.module('title-bar.js', [])
 							<span class="svg-caption-add" ng-include="'dist/images/caption-add.svg'"></span>
 							
 							<label class="search-box">
-								<input type="text">
+								<input class="search-text" type="text">
 								<span class="svg-search-glass" ng-include="'dist/images/search-glass.svg'"></span>
 							</label>
 							<current-user-avatar></current-user-avatar>
