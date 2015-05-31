@@ -657,9 +657,10 @@ textarea {
   color: #71767f;
 }
 .write-post {
-  background-color: rgba(0, 204, 153, 0.7);
-  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 179, 134, 0.7);
+  color: rgba(255, 255, 255, 0.5);
   border-radius: 4px;
+  font-size: 14px;
   margin: 120px auto 0;
   max-width: 575px;
   padding: 45px 30px 20px;
@@ -674,19 +675,19 @@ textarea {
   margin-bottom: 35px;
 }
 .write-post .write-text::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.5);
 }
 .write-post .write-text:-moz-placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.5);
 }
 .write-post .write-text::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.5);
 }
 .write-post .write-text:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.5);
 }
 .write-post .add-button {
-  margin-right: 20px;
+  margin-right: 40px;
   display: inline-block;
 }
 .write-post .add-button .svg-add-photo > svg,
