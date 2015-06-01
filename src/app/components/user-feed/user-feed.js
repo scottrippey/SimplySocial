@@ -1,6 +1,7 @@
 angular.module('user-feed.js',[])
 .directive('userFeed', [
-	function(){
+	'FeedService',
+	function(FeedService){
 		return {
 			restrict: 'E',
 			scope: {},
@@ -10,22 +11,18 @@ angular.module('user-feed.js',[])
 			},
 			template: `
 				<section class="user-feed">
-					<feed-item item="item" ng-repeat="item in vm.feedItems"></feed-item>
+					<post-details-loading ng-if="vm.loadingPosts"></post-details-loading>
+					<post-details post="post" ng-repeat="post in vm.posts"></post-details>
 				</section>
 			`,
 			controller: function() {
 				var vm = this;
 				
-				angular.extend(vm, {
-					feedItems: [
-						{ message: 'Post 1' },
-						{ message: 'Post 2' },
-						{ message: 'Post 3' },
-						{ message: 'Post 4' },
-						{ message: 'Post 5' },
-						{ message: 'Post 6' },
-						{ message: 'Post 7' }
-					]
+				vm.posts = [];
+				vm.loadingPosts = true;
+				FeedService.getCurrentUserFeed().then(function(posts) {
+					vm.posts = posts;
+					vm.loadingPosts = false;
 				});
 			}	
 		};

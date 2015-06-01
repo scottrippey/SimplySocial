@@ -3,5 +3,7 @@ angular.module('app', [
 	'ngTouch',
 
 	'app-components.js',
-	'app-pages.js'
+	'app-pages.js',
+	'app-services.js',
+	'app-utils.js'
 ]);

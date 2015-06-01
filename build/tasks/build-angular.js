@@ -24,6 +24,12 @@ module.exports = function(grunt) {
 					],
 					'src/app/app-pages.js': [
 						'src/app/pages/**/*.js'
+					],
+					'src/app/app-services.js': [
+						'src/app/services/**/*.js'
+					],
+					'src/app/app-utils.js': [
+						'src/app/utils/**/*.js'
 					]
 				},
 				options: {

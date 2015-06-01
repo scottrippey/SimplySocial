@@ -601,12 +601,6 @@ label,
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.feed-item {
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  margin-bottom: 40px;
-  padding: 20px;
-}
 .list-filter {
   color: #ffffff;
   font-size: 12px;
@@ -651,6 +645,12 @@ label,
   background-size: cover;
   padding: 1px 0;
   position: relative;
+}
+.post-details {
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  margin-bottom: 40px;
+  padding-top: 22px;
 }
 .title-bar-spacer {
   height: 60px;
