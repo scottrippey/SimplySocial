@@ -39,7 +39,7 @@ angular.module('profile-settings.js', [])
 					<fieldset>
 						<legend> Privacy </legend>
 						<div class="profile-privacy" ng-repeat="option in vm.privacyOptions">
-							<label> <input type="checkbox"> <span class="toggle-radio"></span> {{ option }} </label>
+							<label> <input type="checkbox" checked> <span class="toggle-radio"></span> {{ option }} </label>
 						</div>
 						
 						

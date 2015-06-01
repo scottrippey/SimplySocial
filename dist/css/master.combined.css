@@ -1013,6 +1013,28 @@ label,
 .profile-settings input:checked ~ .toggle-switch:after {
   left: 27px;
 }
+.profile-settings .toggle-radio {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #c4c4c4;
+  vertical-align: middle;
+  border-radius: 12px;
+  position: relative;
+}
+.profile-settings .toggle-radio:after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+.profile-settings input:checked ~ .toggle-radio:after {
+  background: #00b386;
+}
 .profile-settings .profile-save-button {
   background: #00b386;
   padding: 0 25px;

@@ -108,8 +108,41 @@
 			left: 1px + @switchHeight;
 		}	
 	}
-	input:checked ~ .toggle-switch:after {
-		left: 1px + @switchHeight;
+	input:checked ~ .toggle-switch {
+		&:after {
+			left: 1px + @switchHeight;
+		}
+	}
+	
+	@radioHeight: 24px;
+	.toggle-radio {
+		display: inline-block;
+		width: @radioHeight;
+		height: @radioHeight;
+		border: 1px solid @COLOR-GRAY-77;
+		vertical-align: middle;
+		
+		border-radius: @radioHeight/2;
+		position: relative;
+		
+		&:after {
+			@dotSize: @radioHeight - 8px;
+			content: "";
+			display: inline-block;
+			width: @dotSize;
+			height: @dotSize;
+			border-radius: @dotSize/2;
+			position: absolute;
+			top: 3px;
+			left: 3px;
+		}
+		
+	}
+	input:checked ~ .toggle-radio {
+		&:after {
+			background: @COLOR-GREEN-35;
+		}
+		
 	}
 	
 	
