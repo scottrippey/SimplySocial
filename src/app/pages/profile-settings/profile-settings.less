@@ -54,9 +54,11 @@
 			
 			padding: 0 20px 0 40px;
 		}
+		.user-password-text {
+			padding-right: 80px;
+		}
 		
 	}
-	
 	.profile-change-image {
 		background: @COLOR-WHITE;
 		line-height: 20px;
@@ -64,8 +66,53 @@
 		border: 1px solid @COLOR-GRAY-77;
 		border-radius: 4px;
 		font-size: 14px;
-		
 	}
+	
+	@switchHeight: 26px;
+	.profile-notification, .profile-privacy {
+		line-height: @switchHeight;
+		margin-bottom: 15px;
+		
+		input { display: none; }
+	}
+
+	
+	.toggle-switch {
+		display: inline-block;
+		vertical-align: middle;
+		border-radius: @switchHeight / 2;
+		height: @switchHeight;
+		width: @switchHeight * 2;
+		background: @COLOR-GREEN-35;
+		margin-right: 20px;
+		
+		position: relative;
+		
+		&:after {
+			@handleHeight: @switchHeight - 2px;
+			content: "";
+			display: block;
+			width: @handleHeight;
+			height: @handleHeight;
+			border-radius: @handleHeight / 2;
+			
+			background: @COLOR-WHITE;
+			
+			position: absolute;
+			top: 1px;
+			left: 1px;
+			transition: left .5s;
+			
+		}
+		&.checked:after {
+			left: 1px + @switchHeight;
+		}	
+	}
+	input:checked ~ .toggle-switch:after {
+		left: 1px + @switchHeight;
+	}
+	
+	
 
 	.profile-save-button {
 		background: @COLOR-GREEN-35;
@@ -75,5 +122,7 @@
 		border: none;
 		border-radius: 4px;
 	}
+	
+	
 	
 }

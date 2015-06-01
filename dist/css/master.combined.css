@@ -964,6 +964,9 @@ label,
   border: 1px solid #c4c4c4;
   padding: 0 20px 0 40px;
 }
+.profile-settings .account-group-two .user-password-text {
+  padding-right: 80px;
+}
 .profile-settings .profile-change-image {
   background: #ffffff;
   line-height: 20px;
@@ -971,6 +974,44 @@ label,
   border: 1px solid #c4c4c4;
   border-radius: 4px;
   font-size: 14px;
+}
+.profile-settings .profile-notification,
+.profile-settings .profile-privacy {
+  line-height: 26px;
+  margin-bottom: 15px;
+}
+.profile-settings .profile-notification input,
+.profile-settings .profile-privacy input {
+  display: none;
+}
+.profile-settings .toggle-switch {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 13px;
+  height: 26px;
+  width: 52px;
+  background: #00b386;
+  margin-right: 20px;
+  position: relative;
+}
+.profile-settings .toggle-switch:after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background: #ffffff;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  -webkit-transition: left .5s;
+          transition: left .5s;
+}
+.profile-settings .toggle-switch.checked:after {
+  left: 27px;
+}
+.profile-settings input:checked ~ .toggle-switch:after {
+  left: 27px;
 }
 .profile-settings .profile-save-button {
   background: #00b386;

@@ -30,16 +30,16 @@ angular.module('profile-settings.js', [])
 					
 					<fieldset>
 						<legend> Notifications </legend>
-						<div ng-repeat="option in vm.notificationOptions">
-							<label> <input type="checkbox"> {{ option }} </label>
+						<div class="profile-notification" ng-repeat="option in vm.notificationOptions">
+							<label> <input type="checkbox"> <span class="toggle-switch"></span> {{ option }} </label>
 						</div>
 						
 					</fieldset>
 					
 					<fieldset>
 						<legend> Privacy </legend>
-						<div ng-repeat="option in vm.privacyOptions">
-							<label> <input type="checkbox"> {{ option }} </label>
+						<div class="profile-privacy" ng-repeat="option in vm.privacyOptions">
+							<label> <input type="checkbox"> <span class="toggle-radio"></span> {{ option }} </label>
 						</div>
 						
 						
