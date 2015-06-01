@@ -4,6 +4,7 @@ angular.module('title-bar.js', [])
 		return {
 			restrict: 'E',
 			template: `
+				<div class="title-bar-spacer"></div>
 				<nav class="title-bar">
 					<div class="title-bar-contents">
 						<span class="title-group-one">

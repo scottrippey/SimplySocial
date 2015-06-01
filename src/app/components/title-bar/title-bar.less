@@ -1,6 +1,13 @@
-
+.title-bar-spacer {
+	height: 60px;
+	background-color: @COLOR-GRAY-15;
+}
 .title-bar {
 	@titleBarHeight: 60px;
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%;
+	z-index: @Z-INDEX-TITLE-BAR;
 	
 	background-color: @COLOR-GRAY-15;
 	font-size: 18px;

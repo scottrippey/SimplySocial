@@ -37,7 +37,7 @@ angular.module("main-banner.js", []).directive("mainBanner", [function () {
 angular.module("title-bar.js", []).directive("titleBar", [function () {
 	return {
 		restrict: "E",
-		template: "\n\t\t\t\t<nav class=\"title-bar\">\n\t\t\t\t\t<div class=\"title-bar-contents\">\n\t\t\t\t\t\t<span class=\"title-group-one\">\n\t\t\t\t\t\t\t<span class=\"simply-social-logo\">\n\t\t\t\t\t\t\t\t<span class=\"svg-logo\" ng-include=\"'dist/images/simply-social-logo.svg'\"></span>\n\t\t\t\t\t\t\t\t<span class=\"simply\">simply</span><span class=\"social\">social</span>\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<span class=\"title-group-two\">\n\t\t\t\t\t\t\t<span class=\"svg-caption-add\" ng-include=\"'dist/images/caption-add.svg'\"></span>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<label class=\"search-box\">\n\t\t\t\t\t\t\t\t<input class=\"search-text\" type=\"text\">\n\t\t\t\t\t\t\t\t<span class=\"svg-search-glass\" ng-include=\"'dist/images/search-glass.svg'\"></span>\n\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t<current-user-avatar></current-user-avatar>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t</nav>\n\t\t\t"
+		template: "\n\t\t\t\t<div class=\"title-bar-spacer\"></div>\n\t\t\t\t<nav class=\"title-bar\">\n\t\t\t\t\t<div class=\"title-bar-contents\">\n\t\t\t\t\t\t<span class=\"title-group-one\">\n\t\t\t\t\t\t\t<span class=\"simply-social-logo\">\n\t\t\t\t\t\t\t\t<span class=\"svg-logo\" ng-include=\"'dist/images/simply-social-logo.svg'\"></span>\n\t\t\t\t\t\t\t\t<span class=\"simply\">simply</span><span class=\"social\">social</span>\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<span class=\"title-group-two\">\n\t\t\t\t\t\t\t<span class=\"svg-caption-add\" ng-include=\"'dist/images/caption-add.svg'\"></span>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<label class=\"search-box\">\n\t\t\t\t\t\t\t\t<input class=\"search-text\" type=\"text\">\n\t\t\t\t\t\t\t\t<span class=\"svg-search-glass\" ng-include=\"'dist/images/search-glass.svg'\"></span>\n\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t<current-user-avatar></current-user-avatar>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t</nav>\n\t\t\t"
 	};
 }]);
 angular.module("user-feed.js", []).directive("userFeed", [function () {
@@ -53,7 +53,7 @@ angular.module("user-feed.js", []).directive("userFeed", [function () {
 			var vm = this;
 
 			angular.extend(vm, {
-				posts: [{ message: "Post 1" }, { message: "Post 2" }, { message: "Post 3" }, { message: "Post 4" }]
+				posts: [{ message: "Post 1" }, { message: "Post 2" }, { message: "Post 3" }, { message: "Post 4" }, { message: "Post 5" }, { message: "Post 6" }, { message: "Post 7" }]
 			});
 		}
 	};

@@ -646,7 +646,16 @@ label,
   padding: 1px 0;
   position: relative;
 }
+.title-bar-spacer {
+  height: 60px;
+  background-color: #252627;
+}
 .title-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
   background-color: #252627;
   font-size: 18px;
   padding: 0 20px;
