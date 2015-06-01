@@ -623,7 +623,7 @@ label,
 }
 .list-filter .filter-item.type {
   text-transform: uppercase;
-  color: #bdc2cb;
+  color: #c4c4c4;
   padding: 0 8px;
   margin-right: 40px;
 }
@@ -651,10 +651,48 @@ label,
   border-radius: 4px;
   margin-bottom: 40px;
   padding-top: 22px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #787878;
+}
+.post-details .post-avatar {
+  border-radius: 4px;
+  max-width: 40px;
+  max-height: 40px;
+  margin-left: 20px;
+  float: left;
+}
+.post-details .post-header {
+  margin: 0 20px 0 80px;
+}
+.post-details .post-header .post-user-name {
+  margin: 0 0 .5em 0;
+  font-size: 17px;
+}
+.post-details .post-actions {
+  float: right;
+  color: #787878;
+  margin-right: 20px;
+}
+.post-details .post-actions > span {
+  margin-left: 20px;
+}
+.post-details .post-actions .svg-heart:hover > svg {
+  fill: #cc0000;
+}
+.post-details .post-actions .svg-reply:hover > svg {
+  fill: #0088cc;
+}
+.post-details .post-message {
+  margin: 0 20px 20px 80px;
+}
+.post-details .post-media .post-media-item {
+  width: 100%;
+  border-radius: 0 0 4px 4px;
 }
 .title-bar-spacer {
   height: 60px;
-  background-color: #252627;
+  background-color: #262626;
 }
 .title-bar {
   position: fixed;
@@ -662,7 +700,7 @@ label,
   left: 0;
   width: 100%;
   z-index: 100;
-  background-color: #252627;
+  background-color: #262626;
   font-size: 18px;
   padding: 0 20px;
   line-height: 60px;
@@ -690,10 +728,10 @@ label,
   line-height: 60px;
 }
 .title-bar .simply-social-logo > .simply {
-  color: #71767f;
+  color: #787878;
 }
 .title-bar .simply-social-logo > .social {
-  color: #bdc2cb;
+  color: #c4c4c4;
 }
 .title-bar .simply-social-logo > .svg-logo > svg {
   stroke: #00cc99;
@@ -704,7 +742,7 @@ label,
   fill: none;
 }
 .title-bar .search-box {
-  border: 1px solid #494c50;
+  border: 1px solid #4d4d4d;
   border-radius: 4px;
   display: inline-block;
   line-height: 30px;
@@ -721,7 +759,7 @@ label,
   right: 0;
   top: 8px;
   margin: 0 5px 0 0;
-  color: #71767f;
+  color: #787878;
 }
 .user-feed {
   max-width: 575px;

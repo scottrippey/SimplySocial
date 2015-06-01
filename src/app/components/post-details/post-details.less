@@ -7,7 +7,54 @@
 	margin-bottom: 40px;
 	padding-top: 22px;
 	
+	font-size: 15px;
+	line-height: 1.6;
+	color: @COLOR-GRAY-47;
+	
 	.post-avatar {
+		border-radius: 4px;
+		
+		max-width: 40px;
+		max-height: 40px;
+		margin-left: 20px;
+		float: left;
+		
+	}
+	.post-header {
+		margin: 0 20px 0 80px;
+		
+		.post-user-name {
+			margin: 0 0 .5em 0;
+			font-size: 17px;
+			
+		}
+	}
+	.post-actions {
+		float: right;
+		color: @COLOR-GRAY-47;
+		margin-right: 20px;
+		> span {
+			margin-left: 20px;
+		}
+		.svg-heart:hover > svg {
+			fill: @COLOR-RED-40;
+		}
+		.svg-reply:hover > svg {
+			fill: @COLOR-BLUE-40;
+		}
+	}
+	
+	.post-message {
+		margin: 0 20px 20px 80px;
+	}
+	.post-media {
+		.post-media-item {
+			width: 100%;
+			
+			border-radius: 0 0 4px 4px;
+		}
+	}
+	.post-replies {
 		
 	}
 	
