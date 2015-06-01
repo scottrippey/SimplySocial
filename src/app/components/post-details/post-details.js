@@ -43,7 +43,7 @@ angular.module('post-details.js',[])
 			`,
 			controller: function() {
 				angular.extend(this, {
-					expanded: true
+					expanded: false
 				});
 			}	
 		};
