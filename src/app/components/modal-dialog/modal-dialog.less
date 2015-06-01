@@ -1,0 +1,21 @@
+.modal-dialog {
+	position: fixed;
+	z-index: @Z-INDEX-MODAL;
+	top: 0; right: 0; bottom: 0; left: 0;
+	
+	overflow-x: auto;
+	
+	padding: 20px;
+	
+	.modal-shadow {
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		background-color: fade(@COLOR-BLACK, 90%);
+		
+	}
+	.modal-contents {
+		position: relative;
+		margin: 0 auto;
+		max-width: @WIDTH-MAIN-CONTENT;
+	}
+}

@@ -3,6 +3,8 @@ angular.module('title-bar.js', [])
 	function() {
 		return {
 			restrict: 'E',
+			scope: {},
+			controllerAs: 'vm',
 			template: `
 				<div class="title-bar-spacer"></div>
 				<nav class="title-bar">
@@ -14,7 +16,11 @@ angular.module('title-bar.js', [])
 							</span>
 						</span>
 						<span class="title-group-two">
-							<span class="svg-caption-add" ng-include="'dist/images/caption-add.svg'"></span>
+							<span class="svg-caption-add" ng-include="'dist/images/caption-add.svg'" ng-click="vm.showModal = true"></span>
+
+							<modal-dialog ng-if="vm.showModal" dismiss-modal="vm.showModal = false">
+								<create-post></create-post>
+							</modal-dialog>
 							
 							<label class="search-box">
 								<input class="search-text" type="text">
@@ -25,7 +31,11 @@ angular.module('title-bar.js', [])
 						
 					</div>
 				</nav>
-			`
+			`,
+			controller: function() {
+				var vm = this;
+				vm.showModal = false;
+			}
 		};
 	}
 ]);

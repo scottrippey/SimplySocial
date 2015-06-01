@@ -2,8 +2,10 @@
 angular.module('app-components.js', [
 	"list-filter.js",
 	"main-banner.js",
+	"modal-dialog.js",
 	"post-details-loading.js",
 	"post-details.js",
+	"create-post.js",
 	"title-bar.js",
 	"user-feed.js",
 	"write-something.js"
@@ -99,6 +101,31 @@ angular.module('main-banner.js', [])
 					<ng-transclude></ng-transclude>
 				</div>
 			`
+		};
+	}
+]);
+angular.module('modal-dialog.js', [])
+.directive('modalDialog', [
+	function() {
+		return {
+			restrict: 'E',
+			scope: {},
+			transclude: true,
+			controllerAs: 'vm',
+			bindToController: {
+				dismissModal: '&'
+			},
+			template: `
+				<section class="modal-dialog">
+					<div class="modal-shadow" ng-click="vm.dismissModal()"></div>
+					<div class="modal-contents">
+						<ng-transclude></ng-transclude>
+					</div>
+				</section>
+			`,
+			controller: function() {
+				
+			}
 		};
 	}
 ]);
@@ -201,11 +228,41 @@ angular.module('post-details.js',[])
 		};
 	}
 ]);
+angular.module('create-post.js', [])
+.directive('createPost', [
+	function() {
+		return {
+			restrict: 'E',
+			template: `
+				<section class="create-post">
+					<h3 class="create-post-title"> Create new message </h3>
+					<textarea class="create-post-text"></textarea>
+
+					<div class="create-post-actions">
+						<a class="add-button">
+							<span class="svg-add-photo" ng-include="'dist/images/add-photo.svg'"></span>
+							Add Photo
+						</a>
+						<a class="add-button">
+							<span class="svg-add-video" ng-include="'dist/images/add-video.svg'"></span>
+							Add Video
+						</a>
+						
+						<a class="create-post-button"> Post </a>
+					</div>
+				
+				</section>
+			`
+		};
+	}
+]);
 angular.module('title-bar.js', [])
 .directive('titleBar', [
 	function() {
 		return {
 			restrict: 'E',
+			scope: {},
+			controllerAs: 'vm',
 			template: `
 				<div class="title-bar-spacer"></div>
 				<nav class="title-bar">
@@ -217,7 +274,11 @@ angular.module('title-bar.js', [])
 							</span>
 						</span>
 						<span class="title-group-two">
-							<span class="svg-caption-add" ng-include="'dist/images/caption-add.svg'" ng-click=""></span>
+							<span class="svg-caption-add" ng-include="'dist/images/caption-add.svg'" ng-click="vm.showModal = true"></span>
+
+							<modal-dialog ng-if="vm.showModal" dismiss-modal="vm.showModal = false">
+								<create-post></create-post>
+							</modal-dialog>
 							
 							<label class="search-box">
 								<input class="search-text" type="text">
@@ -228,7 +289,11 @@ angular.module('title-bar.js', [])
 						
 					</div>
 				</nav>
-			`
+			`,
+			controller: function() {
+				var vm = this;
+				vm.showModal = false;
+			}
 		};
 	}
 ]);

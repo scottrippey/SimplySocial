@@ -2,8 +2,10 @@
 angular.module('app-components.js', [
 	"list-filter.js",
 	"main-banner.js",
+	"modal-dialog.js",
 	"post-details-loading.js",
 	"post-details.js",
+	"create-post.js",
 	"title-bar.js",
 	"user-feed.js",
 	"write-something.js"
