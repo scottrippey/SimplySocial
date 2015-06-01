@@ -160,7 +160,7 @@ angular.module('post-details.js',[])
 			`,
 			controller: function() {
 				angular.extend(this, {
-					expanded: true
+					expanded: false
 				});
 			}	
 		};
@@ -217,7 +217,7 @@ angular.module('title-bar.js', [])
 							</span>
 						</span>
 						<span class="title-group-two">
-							<span class="svg-caption-add" ng-include="'dist/images/caption-add.svg'"></span>
+							<span class="svg-caption-add" ng-include="'dist/images/caption-add.svg'" ng-click=""></span>
 							
 							<label class="search-box">
 								<input class="search-text" type="text">
@@ -384,9 +384,9 @@ angular.module('MockPosts.js', [])
 			},
 			{
 				user: MockUsers.sam,
-				message: "You have to see these guys play.  So amazing!",
+				message: "A free, open source movie?  Cool! ",
 				timestamp: "1h",
-				multimedia: MockMedia.videos.sports,
+				multimedia: MockMedia.videos.bigBuckBunny,
 			}
 		];
 		

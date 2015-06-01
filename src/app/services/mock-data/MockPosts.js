@@ -30,9 +30,9 @@ angular.module('MockPosts.js', [])
 			},
 			{
 				user: MockUsers.sam,
-				message: "You have to see these guys play.  So amazing!",
+				message: "A free, open source movie?  Cool! ",
 				timestamp: "1h",
-				multimedia: MockMedia.videos.sports,
+				multimedia: MockMedia.videos.bigBuckBunny,
 			}
 		];
 		

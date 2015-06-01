@@ -55,7 +55,7 @@ angular.module("post-details.js", []).directive("postDetails", [function () {
 		template: "\n\t\t\t\t<article class=\"post-details\">\n\t\t\t\t\n\t\t\t\t\t<post-text post=\"vm.post\"></post-text>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"post-media\" ng-if=\"vm.post.multimedia\">\n\t\t\t\t\t\t<div class=\"post-media-image\" ng-if=\"vm.post.multimedia.mediaType == 'photo'\">\n\t\t\t\t\t\t\t<img class=\"post-media-item\" ng-src=\"{{vm.post.multimedia.imageUrl}}\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"post-media-video\" ng-if=\"vm.post.multimedia.mediaType == 'video'\">\n\t\t\t\t\t\t\t<video class=\"post-media-item\" controls ng-attr-poster=\"{{ vm.post.multimedia.poster }}\">\n\t\t\t\t\t\t\t\t<source \n\t\t\t\t\t\t\t\t\tng-repeat=\"source in vm.post.multimedia.videos\"\n\t\t\t\t\t\t\t\t\tng-src=\"{{ source.videoUrl | trusted }}\" \n\t\t\t\t\t\t\t\t\ttype=\"{{ source.mimeType }}\"\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t</video>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"post-replies-expand\" ng-if=\"vm.post.replies\" ng-click=\"vm.expanded = !vm.expanded\" ng-class=\"{ 'expanded': vm.expanded }\">\n\t\t\t\t\t\t<span ng-if=\"!vm.expanded\">Expand </span>\n\t\t\t\t\t\t<span ng-if=\"vm.expanded\">Collapse </span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<footer class=\"post-replies\" ng-if=\"vm.post.replies && vm.expanded\">\n\t\t\t\t\t\t<post-text class=\"post-reply\" ng-repeat=\"reply in vm.post.replies\" post=\"reply\"></post-text>\n\t\t\t\t\t\t<div class=\"post-add-reply\">\n\t\t\t\t\t\t\t<input class=\"post-reply-text\" type=\"text\" placeholder=\"Reply...\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</footer>\n\t\t\t\t\t\n\t\t\t\t</article>\n\t\t\t",
 		controller: function controller() {
 			angular.extend(this, {
-				expanded: true
+				expanded: false
 			});
 		}
 	};
@@ -74,7 +74,7 @@ angular.module("post-details.js", []).directive("postDetails", [function () {
 angular.module("title-bar.js", []).directive("titleBar", [function () {
 	return {
 		restrict: "E",
-		template: "\n\t\t\t\t<div class=\"title-bar-spacer\"></div>\n\t\t\t\t<nav class=\"title-bar\">\n\t\t\t\t\t<div class=\"title-bar-contents\">\n\t\t\t\t\t\t<span class=\"title-group-one\">\n\t\t\t\t\t\t\t<span class=\"simply-social-logo\">\n\t\t\t\t\t\t\t\t<span class=\"svg-logo\" ng-include=\"'dist/images/simply-social-logo.svg'\"></span>\n\t\t\t\t\t\t\t\t<span class=\"simply\">simply</span><span class=\"social\">social</span>\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<span class=\"title-group-two\">\n\t\t\t\t\t\t\t<span class=\"svg-caption-add\" ng-include=\"'dist/images/caption-add.svg'\"></span>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<label class=\"search-box\">\n\t\t\t\t\t\t\t\t<input class=\"search-text\" type=\"text\">\n\t\t\t\t\t\t\t\t<span class=\"svg-search-glass\" ng-include=\"'dist/images/search-glass.svg'\"></span>\n\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t<current-user-avatar></current-user-avatar>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t</nav>\n\t\t\t"
+		template: "\n\t\t\t\t<div class=\"title-bar-spacer\"></div>\n\t\t\t\t<nav class=\"title-bar\">\n\t\t\t\t\t<div class=\"title-bar-contents\">\n\t\t\t\t\t\t<span class=\"title-group-one\">\n\t\t\t\t\t\t\t<span class=\"simply-social-logo\">\n\t\t\t\t\t\t\t\t<span class=\"svg-logo\" ng-include=\"'dist/images/simply-social-logo.svg'\"></span>\n\t\t\t\t\t\t\t\t<span class=\"simply\">simply</span><span class=\"social\">social</span>\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<span class=\"title-group-two\">\n\t\t\t\t\t\t\t<span class=\"svg-caption-add\" ng-include=\"'dist/images/caption-add.svg'\" ng-click=\"\"></span>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<label class=\"search-box\">\n\t\t\t\t\t\t\t\t<input class=\"search-text\" type=\"text\">\n\t\t\t\t\t\t\t\t<span class=\"svg-search-glass\" ng-include=\"'dist/images/search-glass.svg'\"></span>\n\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t<current-user-avatar></current-user-avatar>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t</nav>\n\t\t\t"
 	};
 }]);
 angular.module("user-feed.js", []).directive("userFeed", ["FeedService", function (FeedService) {
@@ -168,9 +168,9 @@ angular.module("MockPosts.js", []).factory("MockPosts", ["MockUsers", "MockMedia
 		replies: null
 	}, {
 		user: MockUsers.sam,
-		message: "You have to see these guys play.  So amazing!",
+		message: "A free, open source movie?  Cool! ",
 		timestamp: "1h",
-		multimedia: MockMedia.videos.sports }];
+		multimedia: MockMedia.videos.bigBuckBunny }];
 
 	return MockPosts;
 }]);
