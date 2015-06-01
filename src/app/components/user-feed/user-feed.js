@@ -10,16 +10,14 @@ angular.module('user-feed.js',[])
 			},
 			template: `
 				<section class="user-feed">
-					<article class="post" ng-repeat="post in vm.posts"> 
-						{{ post.message }}
-					</article>
+					<feed-item item="item" ng-repeat="item in vm.feedItems"></feed-item>
 				</section>
 			`,
 			controller: function() {
 				var vm = this;
 				
 				angular.extend(vm, {
-					posts: [
+					feedItems: [
 						{ message: 'Post 1' },
 						{ message: 'Post 2' },
 						{ message: 'Post 3' },
