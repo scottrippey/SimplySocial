@@ -1,10 +1,10 @@
-angular.module('write-post.js', [])
-.directive('writePost', [
+angular.module('write-something.js', [])
+.directive('writeSomething', [
 	function() {
 		return {
 			restrict: 'E',
 			template: `
-				<div class="write-post">
+				<div class="write-something">
 					<input class="write-text" placeholder="What's on your mind?" type="text">
 					
 					<a class="add-button">

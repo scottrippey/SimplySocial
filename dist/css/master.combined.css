@@ -727,7 +727,7 @@ label,
   margin-bottom: 40px;
   padding: 20px;
 }
-.write-post {
+.write-something {
   background-color: rgba(0, 179, 134, 0.7);
   color: rgba(255, 255, 255, 0.5);
   border-radius: 4px;
@@ -736,7 +736,7 @@ label,
   max-width: 575px;
   padding: 45px 30px 20px;
 }
-.write-post .write-text {
+.write-something .write-text {
   background-color: transparent;
   border: none;
   /* Firefox 18- */
@@ -745,24 +745,24 @@ label,
   width: 100%;
   margin-bottom: 35px;
 }
-.write-post .write-text::-webkit-input-placeholder {
+.write-something .write-text::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-.write-post .write-text:-moz-placeholder {
+.write-something .write-text:-moz-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-.write-post .write-text::-moz-placeholder {
+.write-something .write-text::-moz-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-.write-post .write-text:-ms-input-placeholder {
+.write-something .write-text:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-.write-post .add-button {
+.write-something .add-button {
   margin-right: 40px;
   display: inline-block;
 }
-.write-post .add-button .svg-add-photo > svg,
-.write-post .add-button .svg-add-video > svg {
+.write-something .add-button .svg-add-photo > svg,
+.write-something .add-button .svg-add-video > svg {
   vertical-align: baseline;
   margin-right: 5px;
 }

@@ -5,7 +5,7 @@ angular.module('home-page.js',[])
 			restrict: 'E',
 			template: `
 				<main-banner>
-					<write-post></write-post>
+					<write-something></write-something>
 					
 					<list-filter></list-filter>
 				</main-banner>

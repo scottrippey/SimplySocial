@@ -4,5 +4,5 @@ angular.module('app-components.js', [
 	"main-banner.js",
 	"title-bar.js",
 	"user-feed.js",
-	"write-post.js"
+	"write-something.js"
 ]);
