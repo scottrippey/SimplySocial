@@ -87,7 +87,7 @@ angular.module("post-details.js", []).directive("postDetails", [function () {
 angular.module("create-post.js", []).directive("createPost", [function () {
 	return {
 		restrict: "E",
-		template: "\n\t\t\t\t<section class=\"create-post\">\n\t\t\t\t\t<h3 class=\"create-post-title\"> Create new message </h3>\n\t\t\t\t\t<textarea class=\"create-post-text\"></textarea>\n\n\t\t\t\t\t<div class=\"create-post-actions\">\n\t\t\t\t\t\t<a class=\"add-button\">\n\t\t\t\t\t\t\t<span class=\"svg-add-photo\" ng-include=\"'dist/images/add-photo.svg'\"></span>\n\t\t\t\t\t\t\tAdd Photo\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<a class=\"add-button\">\n\t\t\t\t\t\t\t<span class=\"svg-add-video\" ng-include=\"'dist/images/add-video.svg'\"></span>\n\t\t\t\t\t\t\tAdd Video\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<a class=\"create-post-button\"> Post </a>\n\t\t\t\t\t</div>\n\t\t\t\t\n\t\t\t\t</section>\n\t\t\t"
+		template: "\n\t\t\t\t<section class=\"create-post\">\n\t\t\t\t\t<h3 class=\"create-post-title\"> Create new message </h3>\n\t\t\t\t\t<textarea class=\"create-post-text\"></textarea>\n\n\t\t\t\t\t<div class=\"create-post-actions\">\n\t\t\t\t\t\t<a class=\"add-button\">\n\t\t\t\t\t\t\t<span class=\"svg-add-photo\" ng-include=\"'dist/images/add-photo.svg'\"></span>\n\t\t\t\t\t\t\tAdd Photo\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<a class=\"add-button\">\n\t\t\t\t\t\t\t<span class=\"svg-add-video\" ng-include=\"'dist/images/add-video.svg'\"></span>\n\t\t\t\t\t\t\tAdd Video\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<button class=\"create-post-button\"> Post </button>\n\t\t\t\t\t</div>\n\t\t\t\t\n\t\t\t\t</section>\n\t\t\t"
 	};
 }]);
 angular.module("title-bar.js", []).directive("titleBar", [function () {
@@ -140,7 +140,7 @@ angular.module("profile-settings.js", []).directive("profileSettings", ["MockUse
 		restrict: "E",
 		bindToController: {},
 		controllerAs: "vm",
-		template: "\n\t\t\t\n\t\t\t\t<section class=\"profile-settings\">\n\t\t\t\t\t<form>\n\t\t\t\t\t\n\t\t\t\t\t<h1> Settings </h1>\n\t\t\t\t\n\t\t\t\t\t<fieldset>\n\t\t\t\t\t\t<legend> Account </legend>\n\t\t\t\t\t\t<div class=\"account-group-one\">\n\t\t\t\t\t\t\t<img class=\"user-avatar\" ng-src=\"{{ vm.user.avatarUrl }}\">\n\t\t\t\t\t\t\t<button> change </button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"account-group-two\">\n\t\t\t\t\t\t\t<input class=\"user-name-text\" type=\"text\" ng-model=\"vm.user.name\">\n\t\t\t\t\t\t\t<input class=\"user-email-text\" type=\"email\" ng-model=\"vm.user.email\">\n\t\t\t\t\t\t\t<input class=\"user-password-text\" type=\"password\" value=\"123456\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t</fieldset>\n\t\t\t\t\t\n\t\t\t\t\t<fieldset>\n\t\t\t\t\t\t<legend> Notifications </legend>\n\t\t\t\t\t\t<div ng-repeat=\"option in vm.notificationOptions\">\n\t\t\t\t\t\t\t{{ option }}\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t</fieldset>\n\t\t\t\t\t\n\t\t\t\t\t<fieldset>\n\t\t\t\t\t\t<legend> Privacy </legend>\n\t\t\t\t\t\t<div ng-repeat=\"option in vm.privacyOptions\">\n\t\t\t\t\t\t\t{{ option }}\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t</fieldset>\n\t\t\t\t\t\n\t\t\t\t\t<button> Save Changes </button>\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t</form>\n\t\t\t\t</section>\n\t\t\t",
+		template: "\n\t\t\t\n\t\t\t\t<section class=\"profile-settings\">\n\t\t\t\t\t<form>\n\t\t\t\t\t\n\t\t\t\t\t<h1 class=\"profile-settings-title\"> Settings </h1>\n\t\t\t\t\n\t\t\t\t\t<fieldset>\n\t\t\t\t\t\t<legend> Account </legend>\n\t\t\t\t\t\t<div class=\"account-group-one\">\n\t\t\t\t\t\t\t<img class=\"user-avatar\" ng-src=\"{{ vm.user.avatarUrl }}\">\n\t\t\t\t\t\t\t<button class=\"profile-change-image\"> change </button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"account-group-two\">\n\t\t\t\t\t\t\t<input class=\"user-name-text\" type=\"text\" ng-model=\"vm.user.name\">\n\t\t\t\t\t\t\t<input class=\"user-email-text\" type=\"email\" ng-model=\"vm.user.email\">\n\t\t\t\t\t\t\t<input class=\"user-password-text\" type=\"password\" value=\"123456\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t</fieldset>\n\t\t\t\t\t\n\t\t\t\t\t<fieldset>\n\t\t\t\t\t\t<legend> Notifications </legend>\n\t\t\t\t\t\t<div ng-repeat=\"option in vm.notificationOptions\">\n\t\t\t\t\t\t\t<label> <input type=\"checkbox\"> {{ option }} </label>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t</fieldset>\n\t\t\t\t\t\n\t\t\t\t\t<fieldset>\n\t\t\t\t\t\t<legend> Privacy </legend>\n\t\t\t\t\t\t<div ng-repeat=\"option in vm.privacyOptions\">\n\t\t\t\t\t\t\t<label> <input type=\"checkbox\"> {{ option }} </label>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t</fieldset>\n\t\t\t\t\t\n\t\t\t\t\t<button class=\"profile-save-button\"> Save Changes </button>\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t</form>\n\t\t\t\t</section>\n\t\t\t",
 		controller: function controller() {
 			var vm = this;
 
@@ -218,10 +218,10 @@ angular.module("MockPosts.js", []).factory("MockPosts", ["MockUsers", "MockMedia
 }]);
 angular.module("MockUsers.js", []).factory("MockUsers", [function () {
 	var MockUsers = {
-		sam: { name: "Sam Soffes", avatarUrl: "//lorempixel.com/100/100/people/1" },
-		jed: { name: "Jed Bridges", avatarUrl: "//lorempixel.com/100/100/people/2" },
-		ren: { name: "Ren Walker", avatarUrl: "//lorempixel.com/100/100/people/3" },
-		meg: { name: "Meg Robichaud", avatarUrl: "//lorempixel.com/100/100/people/4", email: "meg.robichaud@email.com" } };
+		meg: { name: "Meg Robichaud", avatarUrl: "//lorempixel.com/100/100/people/1", email: "meg.robichaud@email.com" },
+		sam: { name: "Sam Soffes", avatarUrl: "//lorempixel.com/100/100/people/2" },
+		jed: { name: "Jed Bridges", avatarUrl: "//lorempixel.com/100/100/people/3" },
+		ren: { name: "Ren Walker", avatarUrl: "//lorempixel.com/100/100/people/4" } };
 
 	return MockUsers;
 }]);

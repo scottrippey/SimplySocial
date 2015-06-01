@@ -18,7 +18,7 @@ angular.module('create-post.js', [])
 							Add Video
 						</a>
 						
-						<a class="create-post-button"> Post </a>
+						<button class="create-post-button"> Post </button>
 					</div>
 				
 				</section>

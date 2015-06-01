@@ -11,13 +11,13 @@ angular.module('profile-settings.js', [])
 				<section class="profile-settings">
 					<form>
 					
-					<h1> Settings </h1>
+					<h1 class="profile-settings-title"> Settings </h1>
 				
 					<fieldset>
 						<legend> Account </legend>
 						<div class="account-group-one">
 							<img class="user-avatar" ng-src="{{ vm.user.avatarUrl }}">
-							<button> change </button>
+							<button class="profile-change-image"> change </button>
 						</div>
 						
 						<div class="account-group-two">
@@ -31,7 +31,7 @@ angular.module('profile-settings.js', [])
 					<fieldset>
 						<legend> Notifications </legend>
 						<div ng-repeat="option in vm.notificationOptions">
-							{{ option }}
+							<label> <input type="checkbox"> {{ option }} </label>
 						</div>
 						
 					</fieldset>
@@ -39,13 +39,13 @@ angular.module('profile-settings.js', [])
 					<fieldset>
 						<legend> Privacy </legend>
 						<div ng-repeat="option in vm.privacyOptions">
-							{{ option }}
+							<label> <input type="checkbox"> {{ option }} </label>
 						</div>
 						
 						
 					</fieldset>
 					
-					<button> Save Changes </button>
+					<button class="profile-save-button"> Save Changes </button>
 					
 					
 					</form>

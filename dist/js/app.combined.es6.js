@@ -249,7 +249,7 @@ angular.module('create-post.js', [])
 							Add Video
 						</a>
 						
-						<a class="create-post-button"> Post </a>
+						<button class="create-post-button"> Post </button>
 					</div>
 				
 				</section>
@@ -383,13 +383,13 @@ angular.module('profile-settings.js', [])
 				<section class="profile-settings">
 					<form>
 					
-					<h1> Settings </h1>
+					<h1 class="profile-settings-title"> Settings </h1>
 				
 					<fieldset>
 						<legend> Account </legend>
 						<div class="account-group-one">
 							<img class="user-avatar" ng-src="{{ vm.user.avatarUrl }}">
-							<button> change </button>
+							<button class="profile-change-image"> change </button>
 						</div>
 						
 						<div class="account-group-two">
@@ -403,7 +403,7 @@ angular.module('profile-settings.js', [])
 					<fieldset>
 						<legend> Notifications </legend>
 						<div ng-repeat="option in vm.notificationOptions">
-							{{ option }}
+							<label> <input type="checkbox"> {{ option }} </label>
 						</div>
 						
 					</fieldset>
@@ -411,13 +411,13 @@ angular.module('profile-settings.js', [])
 					<fieldset>
 						<legend> Privacy </legend>
 						<div ng-repeat="option in vm.privacyOptions">
-							{{ option }}
+							<label> <input type="checkbox"> {{ option }} </label>
 						</div>
 						
 						
 					</fieldset>
 					
-					<button> Save Changes </button>
+					<button class="profile-save-button"> Save Changes </button>
 					
 					
 					</form>
@@ -540,10 +540,10 @@ angular.module('MockUsers.js', [])
 .factory('MockUsers', [
 	function() {
 		var MockUsers = {
-			sam: { name: "Sam Soffes", avatarUrl: "//lorempixel.com/100/100/people/1" },
-			jed: { name: "Jed Bridges", avatarUrl: "//lorempixel.com/100/100/people/2" },
-			ren: { name: "Ren Walker", avatarUrl: "//lorempixel.com/100/100/people/3" },
-			meg: { name: "Meg Robichaud", avatarUrl: "//lorempixel.com/100/100/people/4", email: "meg.robichaud@email.com" },
+			meg: { name: "Meg Robichaud", avatarUrl: "//lorempixel.com/100/100/people/1", email: "meg.robichaud@email.com" },
+			sam: { name: "Sam Soffes", avatarUrl: "//lorempixel.com/100/100/people/2" },
+			jed: { name: "Jed Bridges", avatarUrl: "//lorempixel.com/100/100/people/3" },
+			ren: { name: "Ren Walker", avatarUrl: "//lorempixel.com/100/100/people/4" },
 		};
 		
 		return MockUsers;

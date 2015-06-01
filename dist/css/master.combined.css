@@ -789,9 +789,10 @@ label,
   display: inline-block;
   padding: 0 25px;
   background-color: #00b386;
+  border: none;
+  border-radius: 4px;
   color: #ffffff;
   font-weight: bold;
-  border-radius: 4px;
 }
 .create-post .add-button {
   margin-right: 40px;
@@ -918,9 +919,12 @@ label,
 }
 .profile-settings {
   font-size: 16px;
-  color: #4d4d4d;
+  color: #787878;
   max-width: 575px;
-  margin: 0 auto;
+  margin: 0 auto 60px;
+}
+.profile-settings .profile-settings-title {
+  margin: 40px 0 40px 0;
 }
 .profile-settings fieldset {
   border: none;
@@ -931,11 +935,49 @@ label,
 .profile-settings fieldset legend {
   text-transform: uppercase;
   font-size: 14px;
+  font-weight: bold;
   margin-bottom: 15px;
 }
-.profile-settings .user-avatar {
+.profile-settings .account-group-one {
+  width: 80px;
+  float: left;
+}
+.profile-settings .account-group-one .user-avatar {
   width: 80px;
   height: 80px;
+  border-radius: 4px;
+}
+.profile-settings .account-group-one button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+.profile-settings .account-group-two {
+  margin-left: 130px;
+}
+.profile-settings .account-group-two > input {
+  display: block;
+  width: 300px;
+  line-height: 30px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #c4c4c4;
+  padding: 0 20px 0 40px;
+}
+.profile-settings .profile-change-image {
+  background: #ffffff;
+  line-height: 20px;
+  color: #c4c4c4;
+  border: 1px solid #c4c4c4;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.profile-settings .profile-save-button {
+  background: #00b386;
+  padding: 0 25px;
+  line-height: 40px;
+  color: #ffffff;
+  border: none;
   border-radius: 4px;
 }
 /*# sourceMappingURL=dist/css/master.combined.css.map */
