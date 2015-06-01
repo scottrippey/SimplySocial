@@ -52,7 +52,22 @@ angular.module("post-details.js", []).directive("postDetails", [function () {
 		bindToController: {
 			post: "="
 		},
-		template: "\n\t\t\t\t<article class=\"post-details\">\n\t\t\t\t\n\t\t\t\t\t<img class=\"post-avatar\" ng-src=\"{{vm.post.user.avatarUrl}}\">\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"post-actions\">\n\t\t\t\t\t\t<span class=\"svg-reply\" ng-include=\"'dist/images/reply.svg'\"> (reply) </span>\n\t\t\t\t\t\t<span class=\"svg-heart\" ng-include=\"'dist/images/heart.svg'\"> (heart) </span>\n\t\t\t\t\t\t<span class=\"post-time\" >\n\t\t\t\t\t\t\t{{ vm.post.timestamp }}\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<header class=\"post-header\">\n\t\t\t\t\t\t<a class=\"post-user-name\"> {{ vm.post.user.name }} </a>\n\t\t\t\t\t</header>\n\t\t\t\t\t\n\t\t\t\t\t<p class=\"post-message\">\n\t\t\t\t\t\t{{ vm.post.message }}\n\t\t\t\t\t</p>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"post-media\" ng-if=\"vm.post.multimedia\">\n\t\t\t\t\t\t<div class=\"post-media-image\" ng-if=\"vm.post.multimedia.mediaType == 'photo'\">\n\t\t\t\t\t\t\t<img class=\"post-media-item\" ng-src=\"{{vm.post.multimedia.imageUrl}}\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"post-media-video\" ng-if=\"vm.post.multimedia.mediaType == 'video'\">\n\t\t\t\t\t\t\t<video class=\"post-media-item\" controls ng-attr-poster=\"{{ vm.post.multimedia.poster }}\">\n\t\t\t\t\t\t\t\t<source \n\t\t\t\t\t\t\t\t\tng-repeat=\"source in vm.post.multimedia.videos\"\n\t\t\t\t\t\t\t\t\tng-src=\"{{ source.videoUrl | trusted }}\" \n\t\t\t\t\t\t\t\t\ttype=\"{{ source.mimeType }}\"\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t</video>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<footer class=\"post-replies\" ng-if=\"vm.post.replies\">\n\t\t\t\t\t\tExpand (v)\n\t\t\t\t\t\t<post-reply ng-repeat=\"reply in vm.post.replies\">\n\t\t\t\t\t\t\t{{ reply.user.name }} - {{ reply.message }}\n\t\t\t\t\t\t</post-reply>\n\t\t\t\t\t</footer>\n\t\t\t\t\t\n\t\t\t\t</article>\n\t\t\t",
+		template: "\n\t\t\t\t<article class=\"post-details\">\n\t\t\t\t\n\t\t\t\t\t<post-text post=\"vm.post\"></post-text>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"post-media\" ng-if=\"vm.post.multimedia\">\n\t\t\t\t\t\t<div class=\"post-media-image\" ng-if=\"vm.post.multimedia.mediaType == 'photo'\">\n\t\t\t\t\t\t\t<img class=\"post-media-item\" ng-src=\"{{vm.post.multimedia.imageUrl}}\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"post-media-video\" ng-if=\"vm.post.multimedia.mediaType == 'video'\">\n\t\t\t\t\t\t\t<video class=\"post-media-item\" controls ng-attr-poster=\"{{ vm.post.multimedia.poster }}\">\n\t\t\t\t\t\t\t\t<source \n\t\t\t\t\t\t\t\t\tng-repeat=\"source in vm.post.multimedia.videos\"\n\t\t\t\t\t\t\t\t\tng-src=\"{{ source.videoUrl | trusted }}\" \n\t\t\t\t\t\t\t\t\ttype=\"{{ source.mimeType }}\"\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t</video>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"post-replies-expand\" ng-if=\"vm.post.replies\" ng-click=\"vm.expanded = !vm.expanded\" ng-class=\"{ 'expanded': vm.expanded }\">\n\t\t\t\t\t\t<span ng-if=\"!vm.expanded\">Expand </span>\n\t\t\t\t\t\t<span ng-if=\"vm.expanded\">Collapse </span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<footer class=\"post-replies\" ng-if=\"vm.post.replies && vm.expanded\">\n\t\t\t\t\t\t<post-text class=\"post-reply\" ng-repeat=\"reply in vm.post.replies\" post=\"reply\"></post-text>\n\t\t\t\t\t\t<div class=\"post-add-reply\">\n\t\t\t\t\t\t\t<input class=\"post-reply-text\" type=\"text\" placeholder=\"Reply...\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</footer>\n\t\t\t\t\t\n\t\t\t\t</article>\n\t\t\t",
+		controller: function controller() {
+			angular.extend(this, {
+				expanded: true
+			});
+		}
+	};
+}]).directive("postText", [function () {
+	return {
+		restrict: "E",
+		scope: {},
+		controllerAs: "vm",
+		bindToController: {
+			post: "="
+		},
+		template: "\n\t\t\t\t<img class=\"post-avatar\" ng-src=\"{{vm.post.user.avatarUrl}}\">\n\t\t\t\t\n\t\t\t\t<div class=\"post-actions\">\n\t\t\t\t\t<span class=\"svg-reply\" ng-include=\"'dist/images/reply.svg'\"> (reply) </span>\n\t\t\t\t\t<span class=\"svg-heart\" ng-include=\"'dist/images/heart.svg'\"> (heart) </span>\n\t\t\t\t\t<span class=\"post-time\" >\n\t\t\t\t\t\t{{ vm.post.timestamp }}\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\n\t\t\t\t<header class=\"post-header\">\n\t\t\t\t\t<a class=\"post-user-name\"> {{ vm.post.user.name }} </a>\n\t\t\t\t</header>\n\t\t\t\t\n\t\t\t\t<p class=\"post-message\">\n\t\t\t\t\t{{ vm.post.message }}\n\t\t\t\t</p>\n\t\t\t\n\t\t\t",
 		controller: function controller() {}
 	};
 }]);

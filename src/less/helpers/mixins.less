@@ -84,3 +84,15 @@
     &::-moz-placeholder { color: @color; } /* Firefox 19+ */
     &:-ms-input-placeholder { color: @color; }
 }
+
+.CSS-TRIANGLE(@size, @color) {
+	border: @size solid transparent;
+	border-left-color: @color;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	
+	transform-origin: 15% 50%;
+	// Use transform to rotate the triangle:
+	// transform: rotate(90deg); 
+}
