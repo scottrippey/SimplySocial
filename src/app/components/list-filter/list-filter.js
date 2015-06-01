@@ -3,9 +3,9 @@ angular.module('list-filter.js',[])
 	function(){
 		return {
 			restrict: 'E',
-			bindToController: true,
+			scope: {},
 			controllerAs: 'vm',
-			scope: {
+			bindToController: {
 				filterType: '=?',
 				filterLayout: '=?'
 			},

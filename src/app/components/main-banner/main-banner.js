@@ -5,9 +5,9 @@ angular.module('main-banner.js', [])
 			restrict: 'E',
 			transclude: true,
 			template: `
-			<div class="main-banner">
-				<ng-transclude></ng-transclude>
-			</div>
+				<div class="main-banner">
+					<ng-transclude></ng-transclude>
+				</div>
 			`
 		};
 	}

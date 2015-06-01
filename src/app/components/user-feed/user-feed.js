@@ -3,9 +3,9 @@ angular.module('user-feed.js',[])
 	function(){
 		return {
 			restrict: 'E',
-			bindToController: true,
+			scope: {},
 			controllerAs: 'vm',
-			scope: {
+			bindToController: {
 				filterType: '='
 			},
 			template: `

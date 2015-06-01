@@ -23,9 +23,9 @@ angular.module('feed-item.js',[])
 	function(){
 		return {
 			restrict: 'E',
-			bindToController: true,
+			scope: {},
 			controllerAs: 'vm',
-			scope: {
+			bindToController: {
 				item: '='
 			},
 			template: `
@@ -44,9 +44,9 @@ angular.module('list-filter.js',[])
 	function(){
 		return {
 			restrict: 'E',
-			bindToController: true,
+			scope: {},
 			controllerAs: 'vm',
-			scope: {
+			bindToController: {
 				filterType: '=?',
 				filterLayout: '=?'
 			},
@@ -102,9 +102,9 @@ angular.module('main-banner.js', [])
 			restrict: 'E',
 			transclude: true,
 			template: `
-			<div class="main-banner">
-				<ng-transclude></ng-transclude>
-			</div>
+				<div class="main-banner">
+					<ng-transclude></ng-transclude>
+				</div>
 			`
 		};
 	}
@@ -145,9 +145,9 @@ angular.module('user-feed.js',[])
 	function(){
 		return {
 			restrict: 'E',
-			bindToController: true,
+			scope: {},
 			controllerAs: 'vm',
-			scope: {
+			bindToController: {
 				filterType: '='
 			},
 			template: `

@@ -8,9 +8,9 @@ angular.module("app", ["ngAnimate", "ngTouch", "app-components.js", "app-pages.j
 angular.module("feed-item.js", []).directive("feedItem", [function () {
 	return {
 		restrict: "E",
-		bindToController: true,
+		scope: {},
 		controllerAs: "vm",
-		scope: {
+		bindToController: {
 			item: "="
 		},
 		template: "\n\t\t\t\t<article class=\"feed-item\"> \n\t\t\t\t\t{{ vm.item.message }}\n\t\t\t\t</article>\n\t\t\t",
@@ -20,9 +20,9 @@ angular.module("feed-item.js", []).directive("feedItem", [function () {
 angular.module("list-filter.js", []).directive("listFilter", [function () {
 	return {
 		restrict: "E",
-		bindToController: true,
+		scope: {},
 		controllerAs: "vm",
-		scope: {
+		bindToController: {
 			filterType: "=?",
 			filterLayout: "=?"
 		},
@@ -43,7 +43,7 @@ angular.module("main-banner.js", []).directive("mainBanner", [function () {
 	return {
 		restrict: "E",
 		transclude: true,
-		template: "\n\t\t\t<div class=\"main-banner\">\n\t\t\t\t<ng-transclude></ng-transclude>\n\t\t\t</div>\n\t\t\t"
+		template: "\n\t\t\t\t<div class=\"main-banner\">\n\t\t\t\t\t<ng-transclude></ng-transclude>\n\t\t\t\t</div>\n\t\t\t"
 	};
 }]);
 angular.module("title-bar.js", []).directive("titleBar", [function () {
@@ -55,9 +55,9 @@ angular.module("title-bar.js", []).directive("titleBar", [function () {
 angular.module("user-feed.js", []).directive("userFeed", [function () {
 	return {
 		restrict: "E",
-		bindToController: true,
+		scope: {},
 		controllerAs: "vm",
-		scope: {
+		bindToController: {
 			filterType: "="
 		},
 		template: "\n\t\t\t\t<section class=\"user-feed\">\n\t\t\t\t\t<feed-item item=\"item\" ng-repeat=\"item in vm.feedItems\"></feed-item>\n\t\t\t\t</section>\n\t\t\t",

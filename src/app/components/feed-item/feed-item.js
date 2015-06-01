@@ -3,9 +3,9 @@ angular.module('feed-item.js',[])
 	function(){
 		return {
 			restrict: 'E',
-			bindToController: true,
+			scope: {},
 			controllerAs: 'vm',
-			scope: {
+			bindToController: {
 				item: '='
 			},
 			template: `
