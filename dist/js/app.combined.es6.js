@@ -259,17 +259,21 @@ angular.module('create-post.js', [])
 ]);
 angular.module('title-bar.js', [])
 .directive('titleBar', [
-	function() {
+	'MockUsers',
+	function(MockUsers) {
 		return {
 			restrict: 'E',
 			scope: {},
 			controllerAs: 'vm',
+			bindToController: {
+				mockRoute: '='
+			},
 			template: `
 				<div class="title-bar-spacer"></div>
 				<nav class="title-bar">
 					<div class="title-bar-contents">
 						<span class="title-group-one">
-							<span class="simply-social-logo">
+							<span class="simply-social-logo" ng-click="vm.mockRoute = 'home'">
 								<span class="svg-logo" ng-include="'dist/images/simply-social-logo.svg'"></span>
 								<span class="simply">simply</span><span class="social">social</span>
 							</span>
@@ -285,7 +289,8 @@ angular.module('title-bar.js', [])
 								<input class="search-text" type="text">
 								<span class="svg-search-glass" ng-include="'dist/images/search-glass.svg'"></span>
 							</label>
-							<current-user-avatar></current-user-avatar>
+							<img class="title-bar-avatar" ng-src="{{vm.user.avatarUrl}}" ng-click="vm.mockRoute = 'settings'">
+							{{ MockRouter.page }}
 						</span>
 						
 					</div>
@@ -294,6 +299,7 @@ angular.module('title-bar.js', [])
 			controller: function() {
 				var vm = this;
 				vm.showModal = false;
+				vm.user = MockUsers.meg;
 			}
 		};
 	}

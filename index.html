@@ -11,10 +11,14 @@
         <link rel="stylesheet" href="dist/css/master.combined.css">
     </head>
     <body>
+	    
+	    
+	    <span ng-init="mockRoute = 'home'"></span>
         
-        <title-bar></title-bar>
-        <!--<home-page></home-page>-->
-	    <profile-settings></profile-settings>
+        <title-bar mock-route="mockRoute"></title-bar>
+	    
+        <home-page ng-if="mockRoute == 'home'"></home-page>
+	    <profile-settings ng-if="mockRoute == 'settings'"></profile-settings>
 
         <!-- Vendor scripts -->
         <script src="dist/vendor/angular-1.4.0/angular.js"></script>

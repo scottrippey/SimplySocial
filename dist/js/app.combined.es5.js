@@ -90,15 +90,19 @@ angular.module("create-post.js", []).directive("createPost", [function () {
 		template: "\n\t\t\t\t<section class=\"create-post\">\n\t\t\t\t\t<h3 class=\"create-post-title\"> Create new message </h3>\n\t\t\t\t\t<textarea class=\"create-post-text\"></textarea>\n\n\t\t\t\t\t<div class=\"create-post-actions\">\n\t\t\t\t\t\t<a class=\"add-button\">\n\t\t\t\t\t\t\t<span class=\"svg-add-photo\" ng-include=\"'dist/images/add-photo.svg'\"></span>\n\t\t\t\t\t\t\tAdd Photo\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<a class=\"add-button\">\n\t\t\t\t\t\t\t<span class=\"svg-add-video\" ng-include=\"'dist/images/add-video.svg'\"></span>\n\t\t\t\t\t\t\tAdd Video\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<button class=\"create-post-button\"> Post </button>\n\t\t\t\t\t</div>\n\t\t\t\t\n\t\t\t\t</section>\n\t\t\t"
 	};
 }]);
-angular.module("title-bar.js", []).directive("titleBar", [function () {
+angular.module("title-bar.js", []).directive("titleBar", ["MockUsers", function (MockUsers) {
 	return {
 		restrict: "E",
 		scope: {},
 		controllerAs: "vm",
-		template: "\n\t\t\t\t<div class=\"title-bar-spacer\"></div>\n\t\t\t\t<nav class=\"title-bar\">\n\t\t\t\t\t<div class=\"title-bar-contents\">\n\t\t\t\t\t\t<span class=\"title-group-one\">\n\t\t\t\t\t\t\t<span class=\"simply-social-logo\">\n\t\t\t\t\t\t\t\t<span class=\"svg-logo\" ng-include=\"'dist/images/simply-social-logo.svg'\"></span>\n\t\t\t\t\t\t\t\t<span class=\"simply\">simply</span><span class=\"social\">social</span>\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<span class=\"title-group-two\">\n\t\t\t\t\t\t\t<span class=\"svg-caption-add\" ng-include=\"'dist/images/caption-add.svg'\" ng-click=\"vm.showModal = true\"></span>\n\n\t\t\t\t\t\t\t<modal-dialog ng-if=\"vm.showModal\" dismiss-modal=\"vm.showModal = false\">\n\t\t\t\t\t\t\t\t<create-post></create-post>\n\t\t\t\t\t\t\t</modal-dialog>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<label class=\"search-box\">\n\t\t\t\t\t\t\t\t<input class=\"search-text\" type=\"text\">\n\t\t\t\t\t\t\t\t<span class=\"svg-search-glass\" ng-include=\"'dist/images/search-glass.svg'\"></span>\n\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t<current-user-avatar></current-user-avatar>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t</nav>\n\t\t\t",
+		bindToController: {
+			mockRoute: "="
+		},
+		template: "\n\t\t\t\t<div class=\"title-bar-spacer\"></div>\n\t\t\t\t<nav class=\"title-bar\">\n\t\t\t\t\t<div class=\"title-bar-contents\">\n\t\t\t\t\t\t<span class=\"title-group-one\">\n\t\t\t\t\t\t\t<span class=\"simply-social-logo\" ng-click=\"vm.mockRoute = 'home'\">\n\t\t\t\t\t\t\t\t<span class=\"svg-logo\" ng-include=\"'dist/images/simply-social-logo.svg'\"></span>\n\t\t\t\t\t\t\t\t<span class=\"simply\">simply</span><span class=\"social\">social</span>\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<span class=\"title-group-two\">\n\t\t\t\t\t\t\t<span class=\"svg-caption-add\" ng-include=\"'dist/images/caption-add.svg'\" ng-click=\"vm.showModal = true\"></span>\n\n\t\t\t\t\t\t\t<modal-dialog ng-if=\"vm.showModal\" dismiss-modal=\"vm.showModal = false\">\n\t\t\t\t\t\t\t\t<create-post></create-post>\n\t\t\t\t\t\t\t</modal-dialog>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<label class=\"search-box\">\n\t\t\t\t\t\t\t\t<input class=\"search-text\" type=\"text\">\n\t\t\t\t\t\t\t\t<span class=\"svg-search-glass\" ng-include=\"'dist/images/search-glass.svg'\"></span>\n\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t<img class=\"title-bar-avatar\" ng-src=\"{{vm.user.avatarUrl}}\" ng-click=\"vm.mockRoute = 'settings'\">\n\t\t\t\t\t\t\t{{ MockRouter.page }}\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t</nav>\n\t\t\t",
 		controller: function controller() {
 			var vm = this;
 			vm.showModal = false;
+			vm.user = MockUsers.meg;
 		}
 	};
 }]);
